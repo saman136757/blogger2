@@ -1,0 +1,135 @@
+<!-- views/profile.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/login" class="btn btn-default btn-sm">Logout</a>
+    </div>
+    <div>
+        <button type="button" id="edit" style="background-color:rgb(51, 51, 243)" class="waves-effect waves-light btn">Edit Profile <i class="fas fa-user-edit"></i></button>
+        <button type="button" id="img" style="background-color:green" class="waves-effect waves-light btn">add image <i class="far fa-image"></i></button>
+        <button id="delete" style="background-color: crimson" class="waves-effect waves-light btn" role="button" aria-disabled="true">delete account <i class="fas fa-user-times"></i></button>
+        <button id="addArticle" style="background-color: rgb(218, 125, 38)" class="waves-effect waves-light btn" role="button" aria-disabled="true">add article <i class="fas fa-book"></i></button>
+        <button id="showAllArticle" style="background-color: rgb(29, 209, 164)" class="waves-effect waves-light btn" role="button" aria-disabled="true">articles <i class="fas fa-archive"></i></button>
+        <button id="showMyArticle" style="background-color: rgb(146, 43, 206)" class="waves-effect waves-light btn" role="button" aria-disabled="true">my articles <i class="fas fa-file-alt"></i></button>
+      </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span>Edit</h3>
+                <form action="/editProfile" method="POST">
+                        <div class="form-group">
+                            <label>First name</label>
+                            <input type="text" class="form-control" name="newfirstName" id="newfirstName">
+                        
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" class="form-control" name="newlastName" id="newlastName">
+                        </div>
+                        <div class="form-group">
+                            <label>User name</label>
+                            <input type="text" class="form-control" name="newuserName" id="newuserName">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile</label>
+                            <input type="text" class="form-control" name="newmobile" id="newmobile" value="<%= user.mobile %>">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <input type="text" class="form-control" name="newgender" id="newgender">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="newpassword" id="newpassword">
+                        </div>
+                
+                        <button type="submit" class="btn btn-warning btn-lg" id="newsubmit">Edit</button>
+                    </form>
+                
+
+
+
+                    <!-- <p>
+                        <strong>id</strong>: <br>
+                        <strong>userName</strong>:<br>
+                        <strong>password</strong>: 
+                    </p> -->
+
+            </div>
+        </div>
+
+    </div>
+   
+</div>
+
+<div class="container">
+
+        <div class="page-header text-center">
+            <h1><span class="fa fa-anchor"></span> Article<h1>
+           
+        </div>
+    
+        <div class="row">
+    
+            <!-- LOCAL INFORMATION -->
+            <div class="col-sm-6">
+                <div class="well">
+                    <h3><span class="fa fa-user"></span>Article</h3>
+                    
+                    
+                    <div class="row" id="articleForm">
+                            <form class="col s12">
+                              <div class="row">
+                                <div class="input-field col s6">
+                                    
+                                  <input id="title" placeholder="title" type="text" >
+                                  
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="content" placeholder="write your article"  length="120"></textarea>
+                                  
+                                </div>
+                              </div>
+                              <td><button type="button" id="article" style="background-color: #ddd; color: black; border: 1px solid black; border-radius: 12px;">submit</button></td>
+                            </form>
+                          </div>
+    
+    
+                        <!-- <p>
+                            <strong>id</strong>: <br>
+                            <strong>userName</strong>:<br>
+                            <strong>password</strong>: 
+                        </p> -->
+    
+                </div>
+            </div>
+    
+        </div>
+        
+    </div>
+<!-- <script src="/javascripts/edit.js"></script> -->
+</body>
+</html>

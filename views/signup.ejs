@@ -1,0 +1,70 @@
+<!-- views/signup.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Blogger</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+    <!-- show any messages that come back with authentication -->
+    <!-- <% if (msg.length > 0) { %>
+        <div class="alert alert-danger"><%= msg %></div>
+    <% } %> -->
+
+    <!-- LOGIN FORM -->
+    <form  method="post">
+        <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control" name="firstName" id="firstName">
+        
+        </div>
+        <div class="form-group">
+            <label>Last name</label>
+            <input type="text" class="form-control" name="lastName" id="lastName">
+        </div>
+        <div class="form-group">
+            <label>User name</label>
+            <input type="text" class="form-control" name="userName" id="userName">
+        </div>
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" class="form-control" name="mobile" id="mobile">
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="text" class="form-control" name="gender" id="gender">
+        </div>
+       
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg" id="submit">Signup</button>
+    </form>
+
+    <hr>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+    <p>Or go <a href="/">home</a>.</p>
+
+</div>
+
+</div>
+
+<script src="/javascripts/signup.js"></script>
+</body>
+</html>
